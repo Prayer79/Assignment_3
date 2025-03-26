@@ -1,61 +1,101 @@
-# SENG8120 Modern Automated Testing 
+Functions Overview
 
-Version: Alpaca
+1. calculateCanvasDiagonal
+   Calculates the diagonal length of a rectangular canvas using the Pythagorean theorem.
 
-## Purpose
+2. calculateCanvasSize
+   Computes the total size of a rectangular canvas by summing its length and width, then multiplying by 2.
 
-This repository houses the code we require for examples and assignments.
+3. calculatePaintCost
+   Calculates the total cost of paint required based on the quantity and cost per liter.
 
-## Repository Usage
+4. calculateTotalCost
+   Calculates the total cost of painting by adding the paint cost and labor cost.
 
-This repository will contain branches of code.
+5. convertAreaToSquareFeet
+   Converts an area from square meters to square feet using a conversion factor of 10.7639.
 
-Please refer to your instructor's directions on how to use this repository.
+6. estimatePaintingTime
+   Estimates the time required for painting based on the area to be painted and the painting speed.
 
-## Branch Usage
+7. paintRequiredCalculator
+   Calculates the amount of paint required for a surface area given the coverage per liter.
 
-**Installing The Dependencies**
+8. paintRequiredForMultipleCoats
+   Calculates the total amount of paint needed when multiple coats of paint are applied.
 
-You will need to install dependencies by using:
+Test Coverage
+calculateCanvasDiagonal
+Tests cover the following cases:
 
-```bash
-npm install
-```
+Correctly calculates the diagonal for positive values.
 
-**Running The Project**
+Returns 0 for 0 dimensions.
 
-To run the project, you must first build the project:
+Handles negative inputs correctly.
 
-```bash
-npm run build
-```
+Returns NaN for non-numeric inputs.
 
-followed by:
+calculateCanvasSize
+Tests cover the following cases:
 
-```bash
-npm start
-```
+Correctly calculates the canvas size for positive values.
 
-Note:  if you make a change in the production code, you must `build` & `start`.
-Otherwise, your changes will not be reflected.
+Returns NaN for non-numeric inputs.
 
-**Running The Tests**
+Handles negative values correctly.
 
-To run the tests, you can use
+calculatePaintCost
+Tests cover:
 
-```bash
-npm run test
-```
+Correctly calculates the paint cost for positive values.
 
-To keep the tests running, you can use
+Handles cases where paint required or cost per liter is 0.
 
-```bash
-npm run test -- --watch
-```
+Handles negative values correctly.
 
-To run a specific test, you can use
+calculateTotalCost
+Tests cover:
 
-```bash
-npm run test [my test name]
-```
+Correctly calculates total cost for positive values.
 
+Handles cases where paint cost or labor cost is 0.
+
+Handles negative values correctly.
+
+convertAreaToSquareFeet
+Tests cover:
+
+Correctly converts positive area values.
+
+Returns 0 for an area of 0.
+
+Handles negative area values correctly.
+
+estimatePaintingTime
+Tests cover:
+
+Correctly calculates painting time for positive area and speed values.
+
+Returns Infinity for a speed of 0.
+
+Handles area of 0 correctly.
+
+Handles negative area and speed values.
+
+paintRequiredCalculator
+Tests cover:
+
+Correctly calculates the paint required for a given area and coverage per liter.
+
+paintRequiredForMultipleCoats
+Tests cover:
+
+Correctly calculates paint required for multiple coats.
+
+Handles cases where the area, coverage per liter, or number of coats is 0.
+
+Handles negative values for area, coverage, and coats.
+
+Conclusion
+This repository provides the essential calculations for estimating the total cost and time required for painting. All functions are thoroughly tested to ensure they handle various edge cases such as negative values, 0 values, and non-numeric inputs.
